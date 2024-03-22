@@ -305,7 +305,7 @@ resource "aws_security_group" "database-sg" {
   }
 }
 
-resource "aws_lbk2" "external-elb" {
+resource "aws_lb" "external-elb" {
   name               = "External-LB987654"
   internal           = false
   load_balancer_type = "application"
