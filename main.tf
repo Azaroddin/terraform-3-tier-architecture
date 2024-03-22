@@ -188,7 +188,7 @@ resource "aws_instance" "appserver2" {
   }
 }
 
-resource "aws_db_instance_k2" "default_k2" {
+resource "aws_db_instance" "default" {
   allocated_storage      = 10
   db_subnet_group_name   = aws_db_subnet_group.default.id
   engine                 = "mysql"
