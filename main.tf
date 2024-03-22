@@ -190,14 +190,14 @@ resource "aws_instance" "appserver2" {
 
 resource "aws_db_instance" "default" {
   allocated_storage      = 10
-  db_subnet_group_name   = aws_db_subnet_group.default.id
+  db_subnet_group_name   = aws_db_subnet_group.default.id1
   engine                 = "mysql"
   engine_version         = "8.0.28"
   instance_class         = "db.t2.micro"
   multi_az               = false
   db_name                = "mydb"
-  username               = "raham"
-  password               = "Rahamshaik#444555"
+  username               = "azar"
+  password               = "Azarmohd#444555"
   skip_final_snapshot    = true
   vpc_security_group_ids = [aws_security_group.database-sg.id]
 }
@@ -306,7 +306,7 @@ resource "aws_security_group" "database-sg" {
 }
 
 resource "aws_lb" "external-elb" {
-  name               = "External-LB786"
+  name               = "External-LB987654"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.webserver-sg.id]
