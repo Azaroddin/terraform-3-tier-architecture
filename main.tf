@@ -135,10 +135,10 @@ resource "aws_route_table_association" "b" {
 
 #Create EC2 Instance
 resource "aws_instance" "webserver1" {
-  ami                    = "ami-026255a2746f88074"
+  ami                    = "ami-0c101f26f147fa7fd"
   instance_type          = "t2.micro"
-  availability_zone      = "ap-south-1a"
-  key_name               = "azar"
+  availability_zone      = "us-east-1a"
+  key_name               = "terrakey"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-1.id
   user_data              = "${file("apache.sh")}"
@@ -149,10 +149,10 @@ resource "aws_instance" "webserver1" {
 }
 
 resource "aws_instance" "webserver2" {
-  ami                    = "ami-026255a2746f88074"
+  ami                    = "ami-0c101f26f147fa7fd"
   instance_type          = "t2.micro"
-  availability_zone      = "ap-south-1b"
-  key_name               = "azar"
+  availability_zone      = "us-east-1b"
+  key_name               = "terrakey"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-2.id
   user_data              = "${file("apache.sh")}"
@@ -164,10 +164,10 @@ resource "aws_instance" "webserver2" {
 
 #Create EC2 Instance
 resource "aws_instance" "appserver1" {
-  ami                    = "ami-026255a2746f88074"
+  ami                    = "ami-0c101f26f147fa7fd"
   instance_type          = "t2.micro"
-  availability_zone      = "ap-south-1a"
-  key_name               = "azar"
+  availability_zone      = "us-east-1a"
+  key_name               = "terrakey"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-1.id
   tags = {
@@ -176,10 +176,10 @@ resource "aws_instance" "appserver1" {
 }
 
 resource "aws_instance" "appserver2" {
-  ami                    = "ami-026255a2746f88074"
+  ami                    = "ami-0c101f26f147fa7fd"
   instance_type          = "t2.micro"
-  availability_zone      = "ap-south-1b"
-  key_name               = "azar"
+  availability_zone      = "us-east-1b"
+  key_name               = "terrakey"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-2.id
 
@@ -361,7 +361,7 @@ output "lb_dns_name" {
 
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "azaroddinbatch6pmdevopswithaws202477"  
+  bucket = "azarbatch6pmdevopswithaws202477"  
 
   acl    = "private"  
   versioning {
